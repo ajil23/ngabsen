@@ -8,8 +8,8 @@
             document.write(new Date().getFullYear() + ",");
           </script>
           made with <i class="fa fa-heart"></i> by
-          <a href="https://www.creative-tim.com" class="font-semibold text-slate-700 dark:text-white" target="_blank">Creative Tim</a>
-          for a better web.
+          <a href="#" class="font-semibold text-slate-700 dark:text-white" target="_blank">7Sleepers</a>
+          for universe.
         </div>
       </div>
       <div class="w-full max-w-full px-3 mt-0 shrink-0 lg:w-1/2 lg:flex-none">

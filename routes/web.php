@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,5 @@ Route::middleware([
         return view('admin.index');
     })->name('admin.index');
 });
+
+Route::get('/view-siswa', [SiswaController::class, 'index'])->name('siswa.view');
