@@ -4,7 +4,7 @@
     <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
   
       <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
-        <h6 class="mb-0 font-bold text-white capitalize">Mapel</h6>
+        <h6 class="mb-0 font-bold text-white capitalize">Kelas</h6>
         <div class="flex items-center md:ml-auto md:pr-4">
          
         </div>
@@ -36,7 +36,7 @@
   <div class="w-full px-6 py-6 mx-auto">
     <!-- row 1 -->
     <div class="flex flex-wrap -mx-3">
-     <h1>Ini Adalah Halaman Mapel</h1>
+     <h1>Ini Adalah Halaman Kelas</h1>
     </div>
   
     @include('admin.components.footer')
