@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +30,11 @@ Route::middleware([
     })->name('admin.index');
 });
 
+// Route for siswa
 Route::get('/view-siswa', [SiswaController::class, 'index'])->name('siswa.view');
+
+// Route for kelas
+Route::get('/view-kelas', [KelasController::class, 'index'])->name('kelas.view');
+
+// Route for mapel
+Route::get('/view-mapel', [MapelController::class, 'index'])->name('mapel.view');
