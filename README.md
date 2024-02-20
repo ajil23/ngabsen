@@ -1,4 +1,4 @@
-<p align="center"><img src="{{asset('assets/img/hadwrite-snapify.png')}}" width="400" alt="Snapify Logo"></a></p>
+<p align="center"><img src="public/assets/img/hadwrite-snapify.png" width="400" alt="Snapify Logo"></a></p>
 
 ## About Snapify
 
