@@ -10,5 +10,3 @@ Support us with saweria
 
 ## Contributing
 
-
-
