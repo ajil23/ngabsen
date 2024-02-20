@@ -1,7 +1,7 @@
 <aside class="fixed inset-y-0 flex-wrap items-center justify-between block w-full p-0 my-4 overflow-y-auto antialiased transition-transform duration-200 -translate-x-full bg-white border-0 shadow-xl dark:shadow-none dark:bg-slate-850 max-w-64 ease-nav-brand z-990 xl:ml-6 rounded-2xl xl:left-0 xl:translate-x-0" aria-expanded="false">
   <div class="h-19">
     <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
-    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="https://demos.creative-tim.com/argon-dashboard-tailwind/pages/dashboard.html" target="_blank">
+    <a class="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" href="{{route('admin.index')}}">
       <img src="{{asset('assets/img/snapify-3.png')}}" class="inline h-full max-w-full transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
       <img src="{{asset('assets/img/snapify-3.png')}}" class="hidden h-full max-w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
       <span class="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Snapify</span>
@@ -22,6 +22,15 @@
       </li>
 
       <li class="mt-0.5 w-full">
+        <a class="{{'view-kehadiran' == request()->path() ? 'bg-blue-500/13 rounded-lg py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors'}}" href="{{route('kehadiran.view')}}">
+          <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+            <i class="relative top-0 text-sm leading-normal text-violet-500 ni ni-badge"></i>
+          </div>
+          <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kehadiran</span>
+        </a>
+      </li>
+
+      <li class="mt-0.5 w-full">
         <a class="{{'view-siswa' == request()->path() ? 'bg-blue-500/13 rounded-lg py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors'}}" href="{{route('siswa.view')}}">
           <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
             <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-satisfied"></i>
@@ -33,7 +42,7 @@
       <li class="mt-0.5 w-full">
         <a class="{{'view-kelas' == request()->path() ? 'bg-blue-500/13 rounded-lg py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors' : 'py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors'}}" href="{{route('kelas.view')}}">
           <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-            <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-archive-2"></i>
+            <i class="relative top-0 text-sm leading-normal text-cyan-500 ni ni-archive-2"></i>
           </div>
           <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Kelas</span>
         </a>
@@ -49,10 +58,7 @@
       </li>
 
       <li class="mt-0.5 w-full">
-        <a class="py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-          <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
-            {{ csrf_field() }}
-          </form>
+        <a class="modal-open py-2.7 dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 font-semibold text-slate-700 transition-colors" href="#">
           <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
             <i class="relative top-0 text-sm leading-normal text-red-500 ni ni-lock-circle-open"></i>
           </div>

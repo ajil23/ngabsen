@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KehadiranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SiswaController;
@@ -38,3 +39,6 @@ Route::get('/view-kelas', [KelasController::class, 'index'])->name('kelas.view')
 
 // Route for mapel
 Route::get('/view-mapel', [MapelController::class, 'index'])->name('mapel.view');
+
+// Route for kehadiran
+Route::get('/view-kehadiran', [KehadiranController::class, 'index'])->name('kehadiran.view');
