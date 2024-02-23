@@ -53,21 +53,25 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($datakelas as $item)
                   <tr>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black"><b>VII A</b></span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black"><b>{{$item->nama_kelas}}</b></span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">23</span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">{{$item->jumlah_siswa}}</span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">2023</span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">{{$item->angkatan}}</span>
                     </td>
                     <td colspan="2" class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <a href="#" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">Edit |</a>
-                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> <b>Hapus</b> </a>
+                      <div class="ml-auto">
+                        <a onclick="confirmation(event)" class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="{{route('kelas.delete', $item->id)}}"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
+                        <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="{{route('kelas.edit', $item->id)}}"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
+                      </div>
                     </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -75,7 +79,11 @@
         </div>
       </div>
     </div>
-
+    <div fixed-plugin>
+      <a href="{{route('kelas.add')}}" fixed-plugin-button class="fixed px-4 py-2 text-xl bg-blue-500 shadow-lg cursor-pointer bottom-8 right-8 z-990 rounded-circle text-white">
+        <i class="py-2 pointer-events-none fa fa-solid fa-plus"> </i>
+      </a>
+    </div>
     @include('admin.components.footer')
   
   </div>
