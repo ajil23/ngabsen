@@ -36,6 +36,11 @@ Route::get('/view-siswa', [SiswaController::class, 'index'])->name('siswa.view')
 
 // Route for kelas
 Route::get('/view-kelas', [KelasController::class, 'index'])->name('kelas.view');
+Route::get('/add-kelas', [KelasController::class, 'add'])->name('kelas.add');
+Route::post('/store-kelas', [KelasController::class, 'store'])->name('kelas.store');
+Route::get('/edit-kelas/{id}', [KelasController::class, 'edit'])->name('kelas.edit');
+Route::post('/update-kelas/{id}', [KelasController::class, 'update'])->name('kelas.update');
+Route::get('/delete-kelas/{id}', [KelasController::class, 'delete'])->name('kelas.delete');
 
 // Route for mapel
 Route::get('/view-mapel', [MapelController::class, 'index'])->name('mapel.view');
