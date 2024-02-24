@@ -9,7 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class KelasController extends Controller
 {
     public function index(){
-        $datakelas = Kelas::paginate(5);
+        $datakelas = Kelas::paginate(4);
         return view('adminpanel.kelas.view_kelas', ['datakelas' => $datakelas]);
     }
 
