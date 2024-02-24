@@ -9,7 +9,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class KelasController extends Controller
 {
     public function index(){
-        $datakelas = Kelas::all();
+        $datakelas = Kelas::paginate(5);
         return view('adminpanel.kelas.view_kelas', ['datakelas' => $datakelas]);
     }
 
@@ -38,6 +38,7 @@ class KelasController extends Controller
         $editkelas->jumlah_siswa = $request->jumlah_siswa;
         $editkelas->angkatan = $request->angkatan;
         $editkelas->update();
+        Alert::success('Sukses', 'Sukses Mengubah Data Kelas');
         return redirect()->route('kelas.view');
     }
 

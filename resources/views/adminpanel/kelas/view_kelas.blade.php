@@ -74,6 +74,9 @@
                   @endforeach
                 </tbody>
               </table>
+              <div class="justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+                {{$datakelas->links()}}
+              </div>
             </div>
           </div>
         </div>
