@@ -44,6 +44,11 @@ Route::get('/delete-kelas/{id}', [KelasController::class, 'delete'])->name('kela
 
 // Route for mapel
 Route::get('/view-mapel', [MapelController::class, 'index'])->name('mapel.view');
+Route::get('/add-mapel', [MapelController::class, 'add'])->name('mapel.add');
+Route::post('/store-mapel', [MapelController::class, 'store'])->name('mapel.store');
+Route::get('/edit-mapel/{id}', [MapelController::class, 'edit'])->name('mapel.edit');
+Route::post('/update-mapel/{id}', [MapelController::class, 'update'])->name('mapel.update');
+Route::get('/delete-mapel/{id}', [MapelController::class, 'delete'])->name('mapel.delete');
 
 // Route for kehadiran
 Route::get('/view-kehadiran', [KehadiranController::class, 'index'])->name('kehadiran.view');

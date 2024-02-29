@@ -53,39 +53,35 @@
                 <thead class="align-bottom">
                   <tr>
                     <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
-                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Kelas</th>
-                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Jumlah Siswa</th>
-                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Angkatan</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Kode Mata Pelajaran</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Mata Pelajaran</th>
                     <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {{-- @foreach ($datakelas as $item) --}}
+                  @foreach ($datamapel as $item)
                   <tr>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">1</span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">{{$loop->iteration}}</span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black"><b>IPA</b></span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black"><b>{{$item->kode_mapel}}</b></span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">12</span>
-                    </td>
-                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">21</span>
+                      <span class="text-xs font-semibold leading-tight dark:text-black dark:opacity-80 text-black">{{$item->nama_mapel}}</span>
                     </td>
                     <td colspan="2" class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                       <div class="ml-auto">
-                        <a onclick="confirmation(event)" class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="#"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
-                        <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="#"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
+                        <a onclick="confirmation(event)" class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="{{route('mapel.delete', $item->id)}}"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
+                        <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="{{route('mapel.edit', $item->id)}}"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
                       </div>
                     </td>
                   </tr>
-                  {{-- @endforeach --}}
+                  @endforeach
                 </tbody>
               </table>
               <div class="justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
-                {{-- {{$datakelas->links()}} --}}
+                {{$datamapel->links()}}
               </div>
             </div>
           </div>
@@ -93,7 +89,7 @@
       </div>
     </div>
     <div fixed-plugin>
-      <a href="#" fixed-plugin-button class="fixed px-4 py-2 text-xl bg-blue-500 shadow-lg cursor-pointer bottom-8 right-8 z-990 rounded-circle text-white">
+      <a href="{{route('mapel.add')}}" fixed-plugin-button class="fixed px-4 py-2 text-xl bg-blue-500 shadow-lg cursor-pointer bottom-8 right-8 z-990 rounded-circle text-white">
         <i class="py-2 pointer-events-none fa fa-solid fa-plus"> </i>
       </a>
     </div>
